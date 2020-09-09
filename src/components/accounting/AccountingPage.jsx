@@ -24,11 +24,7 @@ export function AccountingPage() {
   }
   return (
     <>
-      <ul>
-        <li>
-          <NavLink to="/accounting"> Accounting control page </NavLink>
-        </li>
-      </ul>
+
       <Switch>
         <Route exact path="/">
           <Redirect to="/accounting" />;
@@ -41,12 +37,14 @@ export function AccountingPage() {
         </Route>
         <Route path="/accounting/:accountingId">
           {({
+            history,
             match: {
               params: { accountingId },
             },
           }) => (
             <AccountingForm
-              cost={accounting.find((accounting) => accounting.id === accountingId)}
+              history={history}
+              accounting={accounting.find((a) => a.id === accountingId)}
               save={(fields) => update(accountingId, fields)}
             />
           )}

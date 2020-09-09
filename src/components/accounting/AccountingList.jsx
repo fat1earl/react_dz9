@@ -5,37 +5,8 @@ import {firestore, collectionToObject} from '../../firebase';
 
 
 export function AccountingList({accounting, remove}) {
-    // const [accounting, setAccounting] = useState(null);
     const history = useHistory();
-    // const {data: food, isLoading, error, add, remove} = useFirebaseCollection('accounting');
-    // const [error, setError] = useState(null);
 
-    // const [food, setFood] = useState(null);
-    // const [error, setError] = useState(null);
-    // const [isLoading, setIsLoading] = useState(true);
-
-    // useEffect(() => {
-    //     async function getData() {
-    //         try {
-    //         const response = await firestore.collection('accounting').get();
-    
-    //         setAccounting(collectionToObject(response));
-    //       } catch (e) {
-    //         setError(e);
-    //       } finally {
-    //         setIsLoading(false);
-    //       }
-    //     }
-    //     getData();
-    //   }, []);
-
-    // if (isLoading) {
-    //     return '...Loading...'
-    // }
-    // if (error) {
-    //     return `Unexpected error. ${error.message}`
-
-    // }
 
     return (
         <>
@@ -57,9 +28,6 @@ export function AccountingList({accounting, remove}) {
                     <th></th>
                     <th></th>
                 </tr>
-                
-
-
             </thead>
 
             <tbody>
@@ -76,11 +44,7 @@ export function AccountingList({accounting, remove}) {
                     </td>
                     <td><button onClick={async () => {
                        remove(accounting.id);
-                        // await firestore
-                        // .collection('accounting').doc(accounting.id)
-                        // .delete();
 
-                        // setAccounting(accounting.filter((a) => a.id !== accounting.id));
                     }}
                     >Delete</button>
                     </td>
